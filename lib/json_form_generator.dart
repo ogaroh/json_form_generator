@@ -73,7 +73,7 @@ class _JsonFormGeneratorState extends State<JsonFormGenerator> {
                 _handleChanged();
               },
               inputFormatters: item['type'] == 'integer'
-                  ? [WhitelistingTextInputFormatter(RegExp('[0-9]'))]
+                  ? [FilteringTextInputFormatter.allow(RegExp('[0-9]'))]
                   : null,
               keyboardType:
                   item['type'] == 'integer' ? TextInputType.number : null,
@@ -121,7 +121,7 @@ class _JsonFormGeneratorState extends State<JsonFormGenerator> {
             },
             value: dropDownMap[item["title"]],
             isExpanded: true,
-            style: Theme.of(context).textTheme.subhead,
+            style: Theme.of(context).textTheme.subtitle1,
             onChanged: (String newValue) {
               setState(() {
                 dropDownMap[item["title"]] = newValue;
