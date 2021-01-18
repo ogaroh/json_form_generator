@@ -115,7 +115,7 @@ class _JsonFormGeneratorState extends State<JsonFormGenerator> {
                 return null;
               }
               if (value == null) {
-                return 'Please ${item['title']} cannot be empty';
+                return 'This field ${item['title']} cannot be empty';
               }
               return null;
             },
@@ -171,7 +171,7 @@ class _JsonFormGeneratorState extends State<JsonFormGenerator> {
                     TextEditingController(text: _datevalueMap[item["title"]]),
                 validator: (String value) {
                   if (value.isEmpty) {
-                    return 'Please  cannot be empty';
+                    return 'This field cannot be empty';
                   }
                   return null;
                 },
