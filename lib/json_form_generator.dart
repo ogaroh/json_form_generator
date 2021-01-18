@@ -145,7 +145,7 @@ class _JsonFormGeneratorState extends State<JsonFormGenerator> {
             context: context,
             initialDate: DateTime.now(),
             firstDate: DateTime(1880),
-            lastDate: DateTime(2021),
+            lastDate: DateTime.now().add(new Duration(days: 365 * 10)),
             builder: (BuildContext context, Widget child) {
               return Theme(
                 data: ThemeData.light(),
